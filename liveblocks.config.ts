@@ -87,7 +87,7 @@ export const {
     useRemoveReaction,
   },
 } = createRoomContext<Presence, Storage, UserMeta, RoomEvent, ThreadMetadata>(client, {
-  async resolveUsers({ userIds }) {
+  async createClient({ userIds }) {
     // Used only for Comments. Return a list of user information retrieved
     // from `userIds`. This info is used in comments, mentions etc.
 
@@ -100,7 +100,7 @@ export const {
 
     return [];
   },
-  async resolveMentionSuggestions({ text, roomId }) {
+  async createClient({ text, roomId }) {
     // Used only for Comments. Return a list of userIds that match `text`.
     // These userIds are used to create a mention list when typing in the
     // composer.
